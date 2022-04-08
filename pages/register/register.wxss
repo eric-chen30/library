@@ -1,0 +1,9 @@
+/* pages/register/register.wxss */
+/* 注意：微信小程序中，当我们设置整个屏幕高度的时候，需要使用 vh单位，使用 % 是没有效果的 */
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: skyblue;
+}
+
+

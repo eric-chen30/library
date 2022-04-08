@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/library/library",
+    "pages/recommend/recommend",
+    "pages/register/register",
+    "pages/forget/forget",
+    "pages/subscribe/subscribe",
+    "pages/booklist/booklist",
+    "pages/userinfo/userinfo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "图书推荐管理系统",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/library/library",
+        "text": "图书馆",
+        "iconPath": "icon/1.png",
+        "selectedIconPath": "icon/_1.png"
+      },
+      {
+        "pagePath": "pages/recommend/recommend",
+        "text": "推荐",
+        "iconPath": "icon/4.png",
+        "selectedIconPath": "icon/_4.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的",
+        "iconPath": "icon/5.png",
+        "selectedIconPath": "icon/_5.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

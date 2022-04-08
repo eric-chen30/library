@@ -1,0 +1,22 @@
+<!--pages/login/login.wxml-->
+<view>
+  <!--项目Logo-->
+  <view class="logo">
+    <image src="../../images/demo.jpg"></image>
+  </view>
+  <!--登录主体-->
+  <view class="main">
+    <i-panel title="基础用法">
+      <i-input value="{{ phone }}" type="number" title="手机号" i-class="phone_input" autofocus />
+      <i-input value="{{ password }}" type="passwoed" title="密码" i-class="password_input" />
+      <i-button bindtap="Login" type="primary" size="small" shape="circle">Login</i-button>
+    </i-panel>  
+  </view>
+  <!--注册/忘记密码-->
+  <view class="register">
+    <button bindtap="goToRegister">Register</button>
+    <button bindtap="goToForget">Forget</button>
+  </view>
+</view>
+
+

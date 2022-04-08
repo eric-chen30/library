@@ -1,0 +1,19 @@
+.userInfo {
+  height: 24vh;
+  width: 100%;
+  /* background-color: pink; */
+  display: flex;
+  align-items: center;
+}
+
+.userInfo image {
+  width: 66px;
+  height: 66px;
+  border-radius: 16%;
+  margin: 25px;
+}
+
+.userInfo :nth-child(3){
+  margin-left: 130px;
+}
+

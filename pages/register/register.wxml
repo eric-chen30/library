@@ -1,0 +1,11 @@
+<!--pages/register/register.wxml-->
+<view class="container">
+    <i-input value="{{ name }}" type="text" title="姓名" mode="normal" />
+    <i-input value="{{ phone }}" type="number" title="联系电话" />
+    <i-input value="{{ school }}" type="text" title="学校"  />
+    <i-input value="{{ college }}" type="text" title="学院"  />
+    <i-input value="{{ marjor }}" type="text" title="专业"  />
+    <i-input value="{{ password }}" type="password" title="密码"  />
+    <i-input value="{{ confirm }}" type="password" title="确认密码"  />
+    <button bindtap="goToLogin">注册</button>
+</view>

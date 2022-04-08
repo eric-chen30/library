@@ -1,0 +1,13 @@
+/* pages/library/library.wxss */
+.rankList_card {
+  display: flex;
+  align-items: center;
+}
+.number {
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.rankBookList {
+  flex-grow: 9;
+}

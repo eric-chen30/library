@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "i-avatar": "../../static/iView/avatar",
+    "van-cell": "../../static/Vant/cell",
+    "van-cell-group": "../../static/Vant/cell-group"
+  }
+}

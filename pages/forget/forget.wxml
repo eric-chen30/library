@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="box">
+    <i-input value="{{ phone }}" type="number" title="手机号码" />
+    <view>
+      <i-input value="{{}}" type="number" title="验证码"></i-input>
+    </view>
+    <i-input value="{{ password }}" type="password" title="新密码"  />
+    <i-input value="{{ confirm }}" type="password" title="确认密码"  />
+  </view>
+  <button>点击发送验证码</button>
+  <button bindtap="goToLogin">重置密码</button>
+</view>

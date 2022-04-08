@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "i-input": "../../static/iView/input",
+    "i-panel": "../../static/iView/panel"
+  }
+}
