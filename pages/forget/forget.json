@@ -1,5 +1,9 @@
 {
   "usingComponents": {
-    "i-input": "../../static/iView/input"
+    "van-field": "../../static/Vant/field",
+    "van-cell-group": "../../static/Vant/cell-group",
+    "van-cell": "../../static/Vant/cell",
+    "van-button": "../../static/Vant/button",
+    "van-card": "../../static/Vant/card"
   }
 }

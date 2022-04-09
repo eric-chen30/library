@@ -16,7 +16,12 @@ Page({
   },
 
   // 修改密码后跳到登录界面
-  goToLogin: function(){
+  updatePassword: function(){
+    // 进行字段校验
+
+    // 修改密码
+
+    // 跳转到登录界面
     wx.redirectTo({
       url: '../login/login',
     })

@@ -2,6 +2,7 @@
   "usingComponents": {
     "i-avatar": "../../static/iView/avatar",
     "van-cell": "../../static/Vant/cell",
-    "van-cell-group": "../../static/Vant/cell-group"
+    "van-cell-group": "../../static/Vant/cell-group",
+    "van-button": "../../static/Vant/button"
   }
 }

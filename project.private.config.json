@@ -1,0 +1,80 @@
+{
+   "setting": {},
+   "condition": {
+      "plugin": {
+         "list": []
+      },
+      "game": {
+         "list": []
+      },
+      "gamePlugin": {
+         "list": []
+      },
+      "miniprogram": {
+         "list": [
+            {
+               "name": "pages/login/login",
+               "pathName": "pages/login/login",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "pages/index/index",
+               "pathName": "pages/index/index",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "pages/register/register",
+               "pathName": "pages/register/register",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "pages/forget/forget",
+               "pathName": "pages/forget/forget",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "pages/index/index",
+               "pathName": "pages/index/index",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "pages/library/library",
+               "pathName": "pages/library/library",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "pages/userinfo/userinfo",
+               "pathName": "pages/userinfo/userinfo",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "pages/subscribe/subscribe",
+               "pathName": "pages/subscribe/subscribe",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "",
+               "pathName": "pages/recommend/recommend",
+               "query": "",
+               "launchMode": "default",
+               "scene": null
+            },
+            {
+               "name": "",
+               "pathName": "pages/booklist/booklist",
+               "query": "",
+               "scene": null,
+               "launchMode": "default"
+            }
+         ]
+      }
+   }
+}

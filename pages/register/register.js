@@ -5,7 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    // 用户注册信息
+    user: {
+      name: 'Eric Chen',
+      phone: '18471791040',
+      school: 'HUBU',
+      college: '计算机学院',
+      marjor: '大数据',
+      password: '123456',
+      confirm: '123456'
+    }
   },
 
   /**
@@ -20,6 +29,16 @@ Page({
     wx.redirectTo({
       url: '../login/login',
     })
+  },
+
+  // 获取输入框内容
+  // getNameValue:function(e){
+   
+  // },
+
+  // 清空全部注册信息
+  clearAll:function(){
+    console.log(this.data.user)
   },
 
   /**

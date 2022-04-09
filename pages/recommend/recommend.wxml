@@ -1,2 +1,12 @@
 <!--pages/recommend/recommend.wxml-->
-<text>推荐</text>
+<view class="container">
+   <view class="tags">
+      <van-tag  type="primary" size="large">计算机</van-tag>
+      <van-tag  type="primary" size="large">治愈</van-tag>
+      <van-tag  type="primary" size="large">技术</van-tag>
+      <van-tag  type="primary" size="large">科幻</van-tag>
+      <van-tag  type="primary" size="large">情感</van-tag>
+   </view>
+   <view class="recommand_card"></view>
+   <view class="recommand_card"></view>
+</view>

@@ -1,1 +1,10 @@
 /* pages/booklist/booklist.wxss */
+.header {
+   height: 10vh;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: rgb(182, 218, 218);
+}
+

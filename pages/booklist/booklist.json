@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "van-card": "../../static/Vant/card",
+    "van-button": "../../static/Vant/button"
+  }
 }

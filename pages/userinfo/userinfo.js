@@ -5,7 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    user: {
+      userName: 'Eric Chen',
+      sex: '男',
+      age: '22',
+      motto: "旅途一起走过，就不负此生"
+    },
+    
   },
 
   /**

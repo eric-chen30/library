@@ -1,2 +1,14 @@
 <!--pages/userinfo/userinfo.wxml-->
-<text>pages/userinfo/userinfo.wxml</text>
+<view class="header">
+  <image src="../../images/demo.jpg"></image>
+</view>
+
+<van-cell-group title="基本信息">
+  <van-cell title="昵称" is-link value="{{user.userName}}" />
+  <van-cell title="性别" is-link value="{{user.sex}}" />
+  <van-cell title="年龄" is-link value="{{user.age}}" />
+  <van-cell title="个性签名" is-link value="{{user.motto}}" />
+</van-cell-group>
+
+
+

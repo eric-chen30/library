@@ -14,6 +14,12 @@
 }
 
 .userInfo :nth-child(3){
-  margin-left: 130px;
+  margin-left: 100px;
+}
+
+.logout {
+  display: flex;
+  justify-content: center;
+  margin: 25px;
 }
 

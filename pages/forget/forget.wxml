@@ -1,12 +1,24 @@
+
+<!--pages/register/register.wxml-->
 <view class="container">
-  <view class="box">
-    <i-input value="{{ phone }}" type="number" title="手机号码" />
-    <view>
-      <i-input value="{{}}" type="number" title="验证码"></i-input>
+    <view class="title">
+        <text>忘记密码</text>
     </view>
-    <i-input value="{{ password }}" type="password" title="新密码"  />
-    <i-input value="{{ confirm }}" type="password" title="确认密码"  />
-  </view>
-  <button>点击发送验证码</button>
-  <button bindtap="goToLogin">重置密码</button>
+    <van-cell-group inset>
+    <van-field label="电话" model:value="{{ phone }}" type="number" clearable />
+    <van-field label="密码" model:value="{{ newPassword }}" type="password" clearable />
+    <van-field label="确认密码" model:value="{{ newConfirm }}" type="password" clearable />
+    <van-field value="{{ sms }}" center  label="短信验证码" placeholder="请输入短信验证码"  use-button-slot>
+    <van-button slot="button" size="small">
+      发送验证码
+    </van-button>
+    </van-field>
+    </van-cell-group>
+    <van-button  type="info" bindtap="updatePassword">确认修改</van-button>
 </view>
+
+
+
+    
+
+

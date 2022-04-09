@@ -29,15 +29,16 @@
       "disablePlugins": [],
       "outputPath": ""
     },
-    "enableEngineNative": false,
-    "bundle": false,
-    "useIsolateContext": true,
-    "useCompilerModule": true,
-    "userConfirmedUseCompilerModuleSwitch": false,
+    "useIsolateContext": false,
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true
+    "minifyWXSS": true,
+    "disableUseStrict": false,
+    "minifyWXML": true,
+    "showES6CompileOption": false,
+    "useCompilerPlugins": false,
+    "ignoreUploadUnusedFiles": true
   },
   "compileType": "miniprogram",
   "libVersion": "2.23.4",
@@ -93,6 +94,18 @@
         {
           "name": "pages/library/library",
           "pathName": "pages/library/library",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/userinfo/userinfo",
+          "pathName": "pages/userinfo/userinfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/subscribe/subscribe",
+          "pathName": "pages/subscribe/subscribe",
           "scene": null
         }
       ]

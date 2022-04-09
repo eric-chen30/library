@@ -2,7 +2,10 @@
 const app = getApp()
 
 Page({
-  data: {},
+  data: {
+    // 用户名称
+    userName: 'Eric Chen'
+  },
   
   onLoad() {
     
@@ -26,6 +29,13 @@ Page({
   goToBookList:function(){
     wx.navigateTo({
       url: '../booklist/booklist',
+    })
+  },
+
+  // 退出登录
+  logout: function(){
+    wx.reLaunch({
+      url: '../login/login',
     })
   }
 })

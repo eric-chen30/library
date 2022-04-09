@@ -2,11 +2,15 @@
 <view>
   <view class="userInfo">
     <image src="../../images/demo.jpg"></image>
-    <text>Eric Chen</text>
-    <text bindtap="goToUserInfo">编辑资料></text>
+    <text>{{userName}}</text>
+    <text bindtap="goToUserInfo">个人信息></text>
   </view>
   <van-cell-group>
     <van-cell icon="notes-o" title="我的借阅" is-link bindtap="goToSubscribe" />
     <van-cell icon="star-o" title="我的书单" is-link bindtap="goToBookList" />
   </van-cell-group>
+
+  <view class="logout">
+    <van-button plain type="warning" bindtap="logout">退出登录</van-button>
+  </view>
 </view>

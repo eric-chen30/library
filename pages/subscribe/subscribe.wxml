@@ -1,2 +1,17 @@
 <!--pages/subscribe/subscribe.wxml-->
-<text>pages/subscribe/subscribe.wxml</text>
+<van-tabs active="reading" class="tabs" bind:change="onTabChange">
+  <van-tab title="借阅" name="reading"></van-tab>
+  <van-tab title="已归还" name="readed"></van-tab>
+</van-tabs>
+
+<view class="mylist_container" wx:if="{{ tabName == 'reading'}}">
+  <scroll-view class="scroll" scroll-y="true" style="height:{{clientHeight}}px">
+    <view wx:for="{{bookList}}" wx:key="index" wx:for-item="item">
+      <van-card  tag="{{item.type}}"  desc="{{item.tag}}" title="{{item.bookName}}">
+        <view slot="footer">
+          <van-button size="mini">归还</van-button>
+        </view>
+      </van-card>
+    </view>
+  </scroll-view>
+</view>

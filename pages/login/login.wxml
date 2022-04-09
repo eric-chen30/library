@@ -6,16 +6,17 @@
   </view>
   <!--登录主体-->
   <view class="main">
-    <i-panel title="基础用法">
-      <i-input value="{{ phone }}" type="number" title="手机号" i-class="phone_input" autofocus />
-      <i-input value="{{ password }}" type="passwoed" title="密码" i-class="password_input" />
-      <i-button bindtap="Login" type="primary" size="small" shape="circle">Login</i-button>
-    </i-panel>  
+      <van-cell-group>
+        <van-field value="{{ phone }}"  clearable label="电话"  placeholder="请输入电话号" />
+        <van-field value="{{ password }}" type="password" label="密码" placeholder="请输入密码"  border="{{ false }}" />
+      </van-cell-group>
+      <van-button type="info" size="large" block id="login_button" bindtap="Login">登录</van-button>
   </view>
+  
   <!--注册/忘记密码-->
   <view class="register">
-    <button bindtap="goToRegister">Register</button>
-    <button bindtap="goToForget">Forget</button>
+    <van-button plain type="primary" bindtap="goToRegister">用户注册</van-button>
+    <van-button plain type="warning" bindtap="goToForget">忘记密码</van-button>
   </view>
 </view>
 
