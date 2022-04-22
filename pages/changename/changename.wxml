@@ -1,0 +1,19 @@
+<!-- 微信小程序目前不支持单个页面自定义导航栏 -->
+<!-- 要使用组件库中的导航栏需要将全局的导航栏设置为自定义 -->
+<!-- <van-nav-bar
+  title="更改名字"
+  left-text="返回"
+  right-text="保存"
+  left-arrow
+  bind:click-left="onClickLeft"
+  bind:click-right="onClickRight"
+/> -->
+
+<van-cell-group>
+   <van-field value="{{ user_name }}" placeholder="请输入用户名" bind:change="onChange" use-button-slot>
+    <van-button slot="button" type="primary" size="small">保存</van-button>
+   </van-field>
+</van-cell-group>
+
+<text>{{note}}</text>
+

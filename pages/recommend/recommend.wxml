@@ -1,12 +1,27 @@
-<!--pages/recommend/recommend.wxml-->
-<view class="container">
-   <view class="tags">
-      <van-tag  type="primary" size="large">计算机</van-tag>
-      <van-tag  type="primary" size="large">治愈</van-tag>
-      <van-tag  type="primary" size="large">技术</van-tag>
-      <van-tag  type="primary" size="large">科幻</van-tag>
-      <van-tag  type="primary" size="large">情感</van-tag>
-   </view>
-   <view class="recommand_card"></view>
-   <view class="recommand_card"></view>
+<view class="tags">
+   <van-tag  type="primary" size="large">计算机</van-tag>
+   <van-tag  type="primary" size="large">治愈</van-tag>
+   <van-tag  type="primary" size="large">技术</van-tag>
+   <van-tag  type="primary" size="large">科幻</van-tag>
+   <van-tag  type="primary" size="large">情感</van-tag>
 </view>
+
+<view class="blank"></view>
+   
+<scroll-view class="scroll" scroll-y="true" style="height:{{clientHeight}}px">
+   <view class="recommand_card">
+      <view class="left">
+         <image src="/images/demo.jpg" mode="aspectFill"></image>
+      </view>
+      <view class="right">
+         <text>{{bookName}}</text>
+         <text>{{author}}</text>
+         <text>{{tag}}</text>
+         <view>
+            <van-button type="info">借阅</van-button>
+            <van-button type="info" class="button_two">收藏</van-button>
+         </view>
+      </view>   
+   </view>
+</scroll-view>
+

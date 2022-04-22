@@ -2,7 +2,7 @@
 <view>
   <view class="userInfo">
     <image src="../../images/demo.jpg"></image>
-    <text>{{userName}}</text>
+    <text style="font-weight: 560;font-size: large;">{{userName}}</text>
     <text bindtap="goToUserInfo">个人信息></text>
   </view>
   <van-cell-group>
@@ -11,6 +11,6 @@
   </van-cell-group>
 
   <view class="logout">
-    <van-button plain type="warning" bindtap="logout">退出登录</van-button>
+    <van-button color="#d16161" type="danger" bindtap="logout">退出登录</van-button>
   </view>
 </view>

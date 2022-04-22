@@ -5,74 +5,85 @@ Page({
    * 页面的初始数据
    */
   data: {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+    phone: '',
+    newPassword: '',
+    newConfirm: ''
   },
 
   // 修改密码后跳到登录界面
   updatePassword: function(){
-    // 进行字段校验
+    let phone = this.data.phone
+    let newPassword = this.data.newPassword
+    let newConfirm = this.data.newConfirm
+    let param = {
+      phone: phone,
+      newPassword: newPassword
+    }
+    let phoneReg = /^1[3|4|5|6|7|8]\d{9}$/
+    let passwordReg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/
+    if(phoneReg.test(phone) && passwordReg.test(newPassword) && newPassword === newConfirm){
+      let that = this
+      console.log(that.data)
+      wx.request({
+        url: 'http://localhost:3000/users/setNewPassword',
+        method: 'POST',
+        data: param,
+        success: (res) =>{
+          if(res.data.code === 200){
+            wx.showToast({
+              title: '修改成功',
+              icon: 'success'
+            })
 
-    // 修改密码
+            // 将输入清空
+            that.setData({
+              phone: '',
+              newPassword: '',
+              newConfirm: ''
+            })
+            console.log(that.data)
 
-    // 跳转到登录界面
-    wx.redirectTo({
-      url: '../login/login',
-    })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+            // 跳转到登录页面
+            setTimeout(function(){
+              wx.redirectTo({
+                url: '../login/login',
+              })
+            },1200)   
+          }else{
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none'
+            })
+          }
+        },
+        fail: (err) => {
+          wx.showToast({
+            title: err,
+            icon: 'none'
+          })
+        }
+      })
+    }else if(!phoneReg.test(phone) && passwordReg.test(newPassword) && newPassword === newConfirm){
+      wx.showToast({
+        title: '请检查电话格式',
+        icon: 'none'
+      })
+    }else if(phoneReg.test(phone) && !passwordReg.test(newPassword) && newPassword === newConfirm){
+      wx.showToast({
+        title: '密码至少包含字母和数字，为6-20位',
+        icon: 'none'
+      })
+    }else if(phoneReg.test(phone) && passwordReg.test(newPassword) && newPassword !== newConfirm){
+        wx.showToast({
+          title: '确认密码应与密码一致',
+          icon: 'none'
+        })
+    }else{
+      wx.showToast({
+        title: '检查输入',
+        icon: 'none'
+      })
+    }
   }
+
 })

@@ -4,15 +4,15 @@
     <view class="title">
         <text>忘记密码</text>
     </view>
-    <van-cell-group inset>
+    <van-cell-group inset class="main">
     <van-field label="电话" model:value="{{ phone }}" type="number" clearable />
     <van-field label="密码" model:value="{{ newPassword }}" type="password" clearable />
     <van-field label="确认密码" model:value="{{ newConfirm }}" type="password" clearable />
-    <van-field value="{{ sms }}" center  label="短信验证码" placeholder="请输入短信验证码"  use-button-slot>
+    <!-- <van-field value="{{ sms }}" center  label="短信验证码" placeholder="请输入短信验证码"  use-button-slot>
     <van-button slot="button" size="small">
       发送验证码
     </van-button>
-    </van-field>
+    </van-field> -->
     </van-cell-group>
     <van-button  type="info" bindtap="updatePassword">确认修改</van-button>
 </view>

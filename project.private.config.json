@@ -71,6 +71,27 @@
                "name": "",
                "pathName": "pages/booklist/booklist",
                "query": "",
+               "launchMode": "default",
+               "scene": null
+            },
+            {
+               "name": "",
+               "pathName": "pages/booklist/booklist",
+               "query": "",
+               "launchMode": "default",
+               "scene": null
+            },
+            {
+               "name": "",
+               "pathName": "pages/changename/changename",
+               "query": "",
+               "launchMode": "default",
+               "scene": null
+            },
+            {
+               "name": "",
+               "pathName": "pages/login/login",
+               "query": "",
                "scene": null,
                "launchMode": "default"
             }

@@ -16,6 +16,10 @@ page{
   border-radius: 15px;
 }
 
+.main {
+  width: 312px;
+}
+
 .title {
   display: flex;
   justify-content: center;

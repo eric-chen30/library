@@ -4,11 +4,20 @@
 </view>
 
 <van-cell-group title="基本信息">
-  <van-cell title="昵称" is-link value="{{user.userName}}" />
-  <van-cell title="性别" is-link value="{{user.sex}}" />
-  <van-cell title="年龄" is-link value="{{user.age}}" />
-  <van-cell title="个性签名" is-link value="{{user.motto}}" />
+  <van-cell title="昵称"  value="{{userInfo.user_name}}" is-link link-type="navigateTo" url="/pages/changename/changename"/>
+  <van-cell title="性别"  value="{{userInfo.sex}}" is-link />
+  <van-cell title="年龄"  value="{{userInfo.age}}" is-link />
+  <van-cell title="个性签名" value="{{userInfo.motto}}" is-link />
 </van-cell-group>
+<van-cell-group title="学校信息">
+  <van-cell title="学校"  value="{{userInfo.school}}" />
+  <van-cell title="学号"  value="{{userInfo.stu_number}}" />
+  <van-cell title="学院"  value="{{userInfo.college}}" />
+  <van-cell title="专业"  value="{{userInfo.marjor}}" />
+</van-cell-group>
+
+
+
 
 
 

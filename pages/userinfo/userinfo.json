@@ -3,6 +3,7 @@
     "van-image" : "../../static/Vant/image",
     "van-card": "../../static/Vant/card",
     "van-cell": "../../static/Vant/cell",
-    "van-cell-group": "../../static/Vant/cell-group"
+    "van-cell-group": "../../static/Vant/cell-group",
+    "van-picker": "../../static/Vant/picker"
   }
 }

@@ -1,114 +1,115 @@
 {
-  "description": "项目配置文件",
-  "packOptions": {
-    "ignore": []
-  },
-  "setting": {
-    "urlCheck": true,
-    "es6": true,
-    "enhance": false,
-    "postcss": true,
-    "preloadBackgroundData": false,
-    "minified": true,
-    "newFeature": false,
-    "coverView": true,
-    "nodeModules": false,
-    "autoAudits": false,
-    "showShadowRootInWxmlPanel": true,
-    "scopeDataCheck": false,
-    "uglifyFileName": false,
-    "checkInvalidKey": true,
-    "checkSiteMap": true,
-    "uploadWithSourceMap": true,
-    "compileHotReLoad": false,
-    "useMultiFrameRuntime": true,
-    "useApiHook": true,
-    "useApiHostProcess": true,
-    "babelSetting": {
-      "ignore": [],
-      "disablePlugins": [],
-      "outputPath": ""
-    },
-    "useIsolateContext": false,
-    "userConfirmedBundleSwitch": false,
-    "packNpmManually": false,
-    "packNpmRelationList": [],
-    "minifyWXSS": true,
-    "disableUseStrict": false,
-    "minifyWXML": true,
-    "showES6CompileOption": false,
-    "useCompilerPlugins": false,
-    "ignoreUploadUnusedFiles": true
-  },
-  "compileType": "miniprogram",
-  "libVersion": "2.23.4",
-  "appid": "wxe576d6e617782a26",
-  "projectname": "miniprogram-1",
-  "debugOptions": {
-    "hidedInDevtools": []
-  },
-  "scripts": {},
-  "isGameTourist": false,
-  "condition": {
-    "plugin": {
-      "list": []
-    },
-    "game": {
-      "list": []
-    },
-    "gamePlugin": {
-      "list": []
-    },
-    "miniprogram": {
-      "list": [
-        {
-          "name": "pages/login/login",
-          "pathName": "pages/login/login",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/index/index",
-          "pathName": "pages/index/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/register/register",
-          "pathName": "pages/register/register",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/forget/forget",
-          "pathName": "pages/forget/forget",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/index/index",
-          "pathName": "pages/index/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/library/library",
-          "pathName": "pages/library/library",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/userinfo/userinfo",
-          "pathName": "pages/userinfo/userinfo",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/subscribe/subscribe",
-          "pathName": "pages/subscribe/subscribe",
-          "scene": null
-        }
-      ]
-    }
-  }
+   "description": "项目配置文件",
+   "packOptions": {
+      "ignore": []
+   },
+   "setting": {
+      "urlCheck": false,
+      "es6": true,
+      "enhance": false,
+      "postcss": true,
+      "preloadBackgroundData": false,
+      "minified": true,
+      "newFeature": false,
+      "coverView": true,
+      "nodeModules": false,
+      "autoAudits": false,
+      "showShadowRootInWxmlPanel": true,
+      "scopeDataCheck": false,
+      "uglifyFileName": false,
+      "checkInvalidKey": true,
+      "checkSiteMap": false,
+      "uploadWithSourceMap": true,
+      "compileHotReLoad": true,
+      "lazyloadPlaceholderEnable": false,
+      "useMultiFrameRuntime": true,
+      "useApiHook": true,
+      "useApiHostProcess": true,
+      "babelSetting": {
+         "ignore": [],
+         "disablePlugins": [],
+         "outputPath": ""
+      },
+      "useIsolateContext": false,
+      "userConfirmedBundleSwitch": false,
+      "packNpmManually": false,
+      "packNpmRelationList": [],
+      "minifyWXSS": true,
+      "disableUseStrict": false,
+      "minifyWXML": true,
+      "showES6CompileOption": false,
+      "useCompilerPlugins": false,
+      "ignoreUploadUnusedFiles": true
+   },
+   "compileType": "miniprogram",
+   "libVersion": "2.23.4",
+   "appid": "wxe576d6e617782a26",
+   "projectname": "miniprogram-1",
+   "debugOptions": {
+      "hidedInDevtools": []
+   },
+   "scripts": {},
+   "isGameTourist": false,
+   "condition": {
+      "plugin": {
+         "list": []
+      },
+      "game": {
+         "list": []
+      },
+      "gamePlugin": {
+         "list": []
+      },
+      "miniprogram": {
+         "list": [
+            {
+               "name": "pages/login/login",
+               "pathName": "pages/login/login",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "pages/index/index",
+               "pathName": "pages/index/index",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "pages/register/register",
+               "pathName": "pages/register/register",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "pages/forget/forget",
+               "pathName": "pages/forget/forget",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "pages/index/index",
+               "pathName": "pages/index/index",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "pages/library/library",
+               "pathName": "pages/library/library",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "pages/userinfo/userinfo",
+               "pathName": "pages/userinfo/userinfo",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "pages/subscribe/subscribe",
+               "pathName": "pages/subscribe/subscribe",
+               "scene": null
+            }
+         ]
+      }
+   }
 }

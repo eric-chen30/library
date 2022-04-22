@@ -1,14 +1,16 @@
-// 获取应用实例
-const app = getApp()
-
 Page({
   data: {
     // 用户名称
-    userName: 'Eric Chen'
+    userName: ''
   },
   
   onLoad() {
-    
+    // 获取应用实例
+    const app = getApp()
+    console.log(app.globalData.userInfo.user_name)
+    this.setData({
+      userName: app.globalData.userInfo.user_name
+    })
   },
 
   // 跳转到编辑个人信息

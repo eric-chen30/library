@@ -11,3 +11,11 @@
 .rankBookList {
   flex-grow: 9;
 }
+
+
+.sidebar {
+  height: 400px;
+  width: 60px;
+  border: 1px solid seagreen;
+
+}

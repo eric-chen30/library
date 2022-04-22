@@ -1,32 +1,61 @@
-// pages/login/login.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    phone: '18471791040',
-    password: '123456'
+    phone: '',
+    password: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
-  // 登录
   Login: function(){
-    // 获取参数 phone and password
+    // 获取应用实例
+    const app = getApp()
+    // console.log(this.data.phone,this.data.password)
+    let param = {
+      phone: this.data.phone,
+      password: this.data.password
+    }
+    wx.request({
+      url: 'http://localhost:3000/users/login',
+      method: 'POST',
+      data: param,
+      success: (res) => {
+        if(res.data.code === 200){
+          // 查询成功
+          console.log(res.data.data)
+          // 将用户信息userInfo存储到全局
+          app.globalData.userInfo = res.data.data.userinfo
+          console.log(app.globalData.userInfo)
+          wx.showToast({
+            title: res.data.msg,
+            icon: "sucess"
+          })
+          // 跳转到图书页面
+          setTimeout(function(){
+            wx.switchTab({
+              url: '../library/library',
+            })
+          },1200)
 
-    // 进行校验
-
-    // 如果成功，进行页面跳转(switchTab 跳转到 tabBar 页面，并关闭所有非 tabBar 页面)
-    wx.switchTab({
-      url: '/pages/index/index',
+        }else{
+          // 提示用户
+          wx.showToast({
+            title: res.data.msg,
+            icon: "none"
+          })
+        }
+      },
+      fail:(err) => {
+        console.log(err)
+      }
     })
-    // 如果失败，提示用户
   },
 
   // 跳转到注册界面(navigateTo and redirectTo 不能跳转到 tabBar 页面)

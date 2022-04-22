@@ -1,20 +1,26 @@
 .userInfo {
   height: 24vh;
   width: 100%;
-  /* background-color: pink; */
+  background-color: rgba(240, 240, 240, .3);
   display: flex;
   align-items: center;
 }
 
 .userInfo image {
-  width: 66px;
-  height: 66px;
+  width: 78px;
+  height: 78px;
   border-radius: 16%;
   margin: 25px;
+  /* flex-grow: 1; */
+}
+
+.userInfo :nth-child(2){
+  flex-grow: 7;
 }
 
 .userInfo :nth-child(3){
-  margin-left: 100px;
+  /* margin-left: 100px; */
+  flex-grow: 1;
 }
 
 .logout {

@@ -7,6 +7,7 @@ Page({
   data: {
     // 滚动条高度
     clientHeight: '',
+    imageURL: '/images/demo.jpg',
     bookList:[
       {
         type: "精品小说",

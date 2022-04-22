@@ -9,33 +9,15 @@ Page({
     clientHeight: '',
     // 标签名
     tabName: 'library',
-    bookList:[
-      {
-        type: "精品小说",
-        bookName: "《小王子》",
-        tag: "治愈系、孤独",
-      },
-      {
-        type: "精品小说",
-        bookName: "《小王子》",
-        tag: "治愈系、孤独",
-      },
-      {
-        type: "精品小说",
-        bookName: "《小王子》",
-        tag: "治愈系、孤独",
-      },
-      {
-        type: "精品小说",
-        bookName: "《小王子》",
-        tag: "治愈系、孤独",
-      },
-      {
-        type: "精品小说",
-        bookName: "《小王子》",
-        tag: "治愈系、孤独",
-      }
-    ],
+    // 图片地址
+    imageURL: '/images/demo.jpg',
+    // 侧标栏分类索引
+    activeKey: 0,
+    // 图书列表
+    bookList:[],
+    // 搜索值
+    searchValue: " "
+
   },
 
   /**
@@ -65,6 +47,8 @@ Page({
         })
       },
     })
+
+    this.getAll()
   },
 
   // 标签切换
@@ -73,6 +57,118 @@ Page({
     this.setData({
       tabName: event.detail.name
     })
+    // 根据标签调用对应的接口
+    if(this.data.tabName === 'library'){
+      this.getAll()
+    }else if(this.data.tabName === 'rankList'){
+      this.getRankList()
+    }else if(this.data.tabName === 'classification'){
+      // 什么都不做
+    }else{
+      wx.showToast({
+        title: '请求错误',
+        icon: 'error'
+      })
+    }
+  },
+
+  // 全部图书
+  getAll: function(){
+    wx.request({
+      url: 'http://localhost:3000/',
+      method: 'GET',
+      success: (res) => {
+        if(res.data.code ===200){
+          this.setData({
+            bookList: res.data.data
+          })
+        }else{
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+      },
+      fail: (err) => {
+        console.log(err)
+      }
+    })
+  },
+
+  // 排行榜单
+  getRankList: function(){
+    wx.request({
+      url: 'http://localhost:3000/books/rankList',
+      method: 'GET',
+      success: (res) => {
+        if(res.data.code ===200){
+          this.setData({
+            bookList: res.data.data
+          })
+        }else{
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+      },
+      fail: (err) => {
+        console.log(err)
+      }
+    })
+  },
+
+  // 图书搜索
+  bookSearch: function(){
+    // SyntaxError: Unexpected token 小 in JSON at position 1
+    // 当使用POST进行传参时，需要穿的是json对象，单独传一个参数值，会有语法错误
+    // let searchValue = this.data.searchValue
+    let param = {
+      searchValue: this.data.searchValue
+    }
+    console.log(this.data.searchValue,typeof(this.data.searchValue))
+    wx.request({
+      url: 'http://localhost:3000/books/bookSearch',
+      method: 'POST',
+      // data: searchValue,    不能这样进行传值
+      data: param,
+      success: (res)=> {
+        console.log(res)
+        if(res.data.code === 200){
+          this.setData({
+            bookList: res.data.data
+          })
+        }else if(res.data.code === 201){
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+        else{
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+      }
+    })
+  },
+
+  // 清空输入框后重新请求图书列表（如何监听）
+  cancelSearch: function(){
+    // 根据标签请求对应接口
+    if(this.data.tabName === 'library'){
+      this.getAll()
+    }else if(this.data.tabName === 'rankList'){
+      this.getRankList()
+    }else if(this.data.tabName === 'classification'){
+      // 什么都不错
+    }else{
+      wx.showToast({
+        title: '请求错误',
+        icon: 'error'
+      })
+    }
   },
 
   /**

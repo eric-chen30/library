@@ -8,13 +8,15 @@
     "pages/forget/forget",
     "pages/subscribe/subscribe",
     "pages/booklist/booklist",
-    "pages/userinfo/userinfo"
+    "pages/userinfo/userinfo",
+    "pages/changename/changename"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "图书推荐管理系统",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "default"
   },
   "tabBar": {
     "list": [

@@ -7,8 +7,8 @@
   <!--登录主体-->
   <view class="main">
       <van-cell-group>
-        <van-field value="{{ phone }}"  clearable label="电话"  placeholder="请输入电话号" />
-        <van-field value="{{ password }}" type="password" label="密码" placeholder="请输入密码"  border="{{ false }}" />
+        <van-field model:value="{{ phone }}"  clearable label="电话"  placeholder="请输入电话号" />
+        <van-field model:value="{{ password }}" clearable type="password" label="密码" placeholder="请输入密码"  border="{{ false }}" />
       </van-cell-group>
       <van-button type="info" size="large" block id="login_button" bindtap="Login">登录</van-button>
   </view>

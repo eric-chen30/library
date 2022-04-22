@@ -3,20 +3,21 @@
     <view class="title">
         <text>用户注册</text>
     </view>
-    <van-cell-group inset>
-    <van-field label="姓名" model:value="{{ user.name }}" clearable bindtap="getNameValue"/>
-    <van-field label="电话" model:value="{{ user.phone }}" type="number" clearable />
-    <van-field label="学校" model:value="{{ user.school }}" clearable />
-    <van-field label="学院" model:value="{{ user.college }}" clearable />
-    <van-field label="专业" model:value="{{ user.marjor }}" clearable />
-    <van-field label="密码" model:value="{{ user.password }}" type="password" clearable />
-    <van-field label="确认密码" model:value="{{ user.confirm }}" type="password" clearable />
+    <van-cell-group inset class="main">
+    <van-field label="姓名" model:value="{{ name }}" clearable />
+    <van-field label="电话" model:value="{{ phone }}" type="number" clearable />
+    <van-field label="学号" model:value="{{ stu_number }}" type="number" clearable />
+    <van-field label="学校" model:value="{{ school }}" clearable />
+    <van-field label="学院" model:value="{{ college }}" clearable />
+    <van-field label="专业" model:value="{{ marjor }}" clearable />
+    <van-field label="密码" model:value="{{ password }}" type="password" clearable />
+    <van-field label="确认密码" model:value="{{ confirm }}" type="password" clearable />
     </van-cell-group>
 </view>
 
 <view class="buttons">
     <van-button  type="warning" bindtap="clearAll">一键清空</van-button>
-    <van-button  type="info" bindtap="goToLogin">注册</van-button>
+    <van-button  type="info" bindtap="register">注册</van-button>
 </view>
 
 

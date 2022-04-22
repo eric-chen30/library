@@ -9,12 +9,54 @@
    justify-content: space-evenly;
    width: 100%;
    flex-wrap: wrap;
+   margin-top: 10px;
+}
+
+.blank { 
+   height: 2vh;
+   width: 100%;
 }
 
 .recommand_card {
-   height: 30vh;
-   width: 90%;
+   height: 28vh;
+   width: 84%;
    background: rgba(255, 255 , 255, 0.3);
    box-shadow: 4px 4px  6px 3px rgba(0, 0, 0, 0.3);
-   margin: 16px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 20px;
+   margin-left: 30px;
 }
+
+.left {
+   height: 24vh;
+   width: 40%;
+   background-color: #B23636;
+   margin: 10px;
+}
+
+.left image {
+   width: 100%;
+   height: 100%;
+}
+
+.right {
+   height: 24vh;
+   width: 50%;
+   margin: 8px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+}
+
+.right text {
+   font-size: 0.6rem;
+}
+
+.button_two {
+   margin-left: 10px;
+}
+
+
+

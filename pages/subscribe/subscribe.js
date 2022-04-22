@@ -9,7 +9,18 @@ Page({
     clientHeight: '',
     // 标签名
     tabName: 'reading',
+    imageURL: '/images/demo.jpg',
     bookList:[
+      {
+        type: "精品小说",
+        bookName: "《小王子》",
+        tag: "治愈系、孤独",
+      },
+      {
+        type: "精品小说",
+        bookName: "《小王子》",
+        tag: "治愈系、孤独",
+      },
       {
         type: "精品小说",
         bookName: "《小王子》",

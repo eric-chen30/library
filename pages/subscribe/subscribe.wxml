@@ -4,12 +4,24 @@
   <van-tab title="已归还" name="readed"></van-tab>
 </van-tabs>
 
-<view class="mylist_container" wx:if="{{ tabName == 'reading'}}">
+<view wx:if="{{ tabName == 'reading'}}">
   <scroll-view class="scroll" scroll-y="true" style="height:{{clientHeight}}px">
     <view wx:for="{{bookList}}" wx:key="index" wx:for-item="item">
-      <van-card  tag="{{item.type}}"  desc="{{item.tag}}" title="{{item.bookName}}">
+      <van-card  tag="{{item.type}}"  desc="{{item.tag}}" title="{{item.bookName}}" thumb="{{imageURL}}">
         <view slot="footer">
           <van-button size="mini">归还</van-button>
+        </view>
+      </van-card>
+    </view>
+  </scroll-view>
+</view>
+
+<view wx:if="{{ tabName == 'readed'}}">
+  <scroll-view class="scroll" scroll-y="true" style="height:{{clientHeight}}px">
+    <view wx:for="{{bookList}}" wx:key="index" wx:for-item="item">
+      <van-card  tag="{{item.type}}"  desc="{{item.tag}}" title="{{item.bookName}}" thumb="{{imageURL}}">
+        <view slot="footer">
+          <van-button size="mini" disabled>已归还</van-button>
         </view>
       </van-card>
     </view>

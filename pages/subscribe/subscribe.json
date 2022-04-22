@@ -2,6 +2,7 @@
   "usingComponents": {
     "van-tab": "../../static/Vant/tab",
     "van-tabs": "../../static/Vant/tabs",
-    "van-card": "../../static/Vant/card"
+    "van-card": "../../static/Vant/card",
+    "van-button":"../../static/Vant/button"
   }
 }
