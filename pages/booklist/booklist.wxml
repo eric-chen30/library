@@ -6,10 +6,10 @@
 <view class="bookList_container">
   <scroll-view class="scroll" scroll-y="true" style="height:{{clientHeight}}px">
     <view wx:for="{{bookList}}" wx:key="index" wx:for-item="item">
-      <van-card  tag="{{item.type}}"  desc="{{item.tag}}" title="{{item.bookName}}" thumb="{{imageURL}}">
+      <van-card  tag="{{item[0].type}}"  desc="{{item[0].tag}}" title="{{item[0].bname}}" thumb="{{imageURL}}">
         <view slot="footer">
-          <van-button size="mini">借阅</van-button>
-          <van-button size="mini">取消</van-button>
+          <van-button size="mini" bindtap="lendBook" data-bid="{{item[0].bid}}">借阅</van-button>
+          <van-button size="mini" bindtap="Unsubscribe" data-bid="{{item}}">取消</van-button>
         </view>
       </van-card>
     </view>

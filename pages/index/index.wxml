@@ -2,7 +2,7 @@
 <view>
   <view class="userInfo">
     <image src="../../images/demo.jpg"></image>
-    <text style="font-weight: 560;font-size: large;">{{userName}}</text>
+    <text style="font-weight: 600;font-size: medium;">{{userName}}</text>
     <text bindtap="goToUserInfo">个人信息></text>
   </view>
   <van-cell-group>

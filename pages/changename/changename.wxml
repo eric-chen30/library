@@ -10,8 +10,8 @@
 /> -->
 
 <van-cell-group>
-   <van-field value="{{ user_name }}" placeholder="请输入用户名" bind:change="onChange" use-button-slot>
-    <van-button slot="button" type="primary" size="small">保存</van-button>
+   <van-field model:value="{{ user_name }}" placeholder="请输入用户名" bind:change="onChange" use-button-slot>
+    <van-button slot="button" type="primary" size="small" bindtap="changeName">保存</van-button>
    </van-field>
 </van-cell-group>
 

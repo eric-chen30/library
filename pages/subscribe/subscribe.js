@@ -13,37 +13,7 @@ Page({
     bookList:[
       {
         type: "精品小说",
-        bookName: "《小王子》",
-        tag: "治愈系、孤独",
-      },
-      {
-        type: "精品小说",
-        bookName: "《小王子》",
-        tag: "治愈系、孤独",
-      },
-      {
-        type: "精品小说",
-        bookName: "《小王子》",
-        tag: "治愈系、孤独",
-      },
-      {
-        type: "精品小说",
-        bookName: "《小王子》",
-        tag: "治愈系、孤独",
-      },
-      {
-        type: "精品小说",
-        bookName: "《小王子》",
-        tag: "治愈系、孤独",
-      },
-      {
-        type: "精品小说",
-        bookName: "《小王子》",
-        tag: "治愈系、孤独",
-      },
-      {
-        type: "精品小说",
-        bookName: "《小王子》",
+        bookName: "追风筝的人",
         tag: "治愈系、孤独",
       }
     ],

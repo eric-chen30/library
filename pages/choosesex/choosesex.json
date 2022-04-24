@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "van-picker": "../../static/Vant/picker"
+  }
+}

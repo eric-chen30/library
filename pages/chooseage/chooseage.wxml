@@ -1,0 +1,8 @@
+
+<van-cell-group>
+   <van-field model:value="{{ age }}" placeholder="请输入年龄" bind:change="onChange" use-button-slot>
+    <van-button slot="button" type="primary" size="small" bindtap="chooseAge">保存</van-button>
+   </van-field>
+</van-cell-group>
+
+<text>{{note}}</text>

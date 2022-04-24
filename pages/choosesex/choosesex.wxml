@@ -1,0 +1,7 @@
+<van-picker
+  show-toolbar
+  title="性别"
+  columns="{{ columns }}"
+  bind:cancel="onCancel"
+  bind:confirm="chooseSex"
+/>

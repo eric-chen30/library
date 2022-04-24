@@ -1,35 +1,33 @@
-// pages/changename/changename.js
 Page({
 
    /**
     * 页面的初始数据
     */
    data: {
-      note: '好的名字可以让你的朋友更容易记住你。',
-      user_name: '',
-      user_id: ''
+      sex: '',
+      columns: ['男', '女']
    },
 
    /**
     * 生命周期函数--监听页面加载
     */
    onLoad: function (options) {
-      const app = getApp()
-      this.setData({
-         user_id: app.globalData.userInfo.user_id,
-         user_name: app.globalData.userInfo.user_name
-      })
+      
    },
 
-
-   changeName: function(){
-      console.log(this.data.user_id,this.data.user_name)
+   chooseSex: function(event){
+      const {value, index } = event.detail;
+      console.log(value,index)
+      // 调用接口，修改性别
+      const app = getApp()
+      let user_id = app.globalData.userInfo.user_id
+      console.log(user_id)
       let param = {
-         user_id: this.data.user_id,
-         user_name: this.data.user_name
+         user_id: user_id,
+         sex: value
       }
       wx.request({
-        url: 'http://localhost:3000/users/changeName',
+        url: 'http://localhost:3000/users/chooseSex',
         method: 'POST',
         data: param,
         success: (res) => {
@@ -37,12 +35,12 @@ Page({
               wx.showToast({
                 title: '修改成功',
               })
-              // 跳转到 userinfo
+
               setTimeout(function(){
                wx.redirectTo({
                   url: '../userinfo/userinfo',
                 })
-              },1200)
+              },1200)  
            }else{
               wx.showToast({
                 title: '修改失败',
@@ -56,6 +54,12 @@ Page({
              icon: 'none'
            })
         }
+      })
+   },
+
+   onCancel: function(){
+      wx.navigateTo({
+        url: '../userinfo/userinfo',
       })
    },
 

@@ -1,0 +1,8 @@
+<!--pages/setmotto/setmotto.wxml-->
+<van-cell-group>
+   <van-field model:value="{{ motto }}" placeholder="请设置个性签名" bind:change="onChange" use-button-slot>
+    <van-button slot="button" type="primary" size="small" bindtap="setMotto">保存</van-button>
+   </van-field>
+</van-cell-group>
+
+<text>{{note}}</text>

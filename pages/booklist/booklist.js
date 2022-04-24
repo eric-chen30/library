@@ -8,43 +8,7 @@ Page({
     // 滚动条高度
     clientHeight: '',
     imageURL: '/images/demo.jpg',
-    bookList:[
-      {
-        type: "精品小说",
-        bookName: "《小王子》",
-        tag: "治愈系、孤独",
-      },
-      {
-        type: "精品小说",
-        bookName: "《小王子》",
-        tag: "治愈系、孤独",
-      },
-      {
-        type: "精品小说",
-        bookName: "《小王子》",
-        tag: "治愈系、孤独",
-      },
-      {
-        type: "精品小说",
-        bookName: "《小王子》",
-        tag: "治愈系、孤独",
-      },
-      {
-        type: "精品小说",
-        bookName: "《小王子》",
-        tag: "治愈系、孤独",
-      },
-      {
-        type: "精品小说",
-        bookName: "《小王子》",
-        tag: "治愈系、孤独",
-      },
-      {
-        type: "精品小说",
-        bookName: "《小王子》",
-        tag: "治愈系、孤独",
-      }
-    ],
+    bookList:[],
   },
 
   /**
@@ -71,7 +35,81 @@ Page({
         })
       },
     })
+
+    // 获取收藏列表
+    that.getCollectBooks()
   },
+
+  // 收藏列表
+  getCollectBooks: function(){
+    const app = getApp()
+    let user_id = app.globalData.userInfo.user_id
+    let param = {
+      user_id: user_id
+    }
+    wx.request({
+      url: 'http://localhost:3000/books/getCollectBooks',
+      method: 'POST',
+      data: param,
+      success: (res) => {
+        if(res.data.code === 200){
+          console.log(res.data.data)
+          this.setData({
+            bookList: res.data.data
+          })
+        }else{
+          wx.showToast({
+            title: '出现问题啦',
+            icon: 'none'
+          })
+        }
+      },
+      fail: (err) => {
+        wx.showToast({
+          title: err,
+          icon: 'error'
+        })
+      }
+    })
+  },
+
+  // 图书借阅
+  lendBook: function(event){
+    console.log(event)
+    // 获取图书表主键bid
+    let bid = event.currentTarget.dataset.bid
+    console.log("图书主键为:" + bid)
+    const app = getApp()
+    let user_id = app.globalData.userInfo.user_id
+    console.log("用户id为:" + user_id)
+    let param = {
+      bid: bid,
+      user_id: user_id
+    }
+    wx.request({
+      url: 'http://localhost:3000/books/lendBook',
+      method: 'POST',
+      data: param,
+      success: (res) => {
+        if(res.data.code ===200){
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'success'
+          })
+        }else{
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+      },
+      fail: (err) => {
+        console.log(err)
+      }
+    })
+  },
+
+  // 取消订阅
 
   /**
    * 生命周期函数--监听页面初次渲染完成

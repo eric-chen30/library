@@ -9,7 +9,10 @@
     "pages/subscribe/subscribe",
     "pages/booklist/booklist",
     "pages/userinfo/userinfo",
-    "pages/changename/changename"
+    "pages/changename/changename",
+    "pages/choosesex/choosesex",
+    "pages/chooseage/chooseage",
+    "pages/setmotto/setmotto"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -171,6 +171,74 @@ Page({
     }
   },
 
+  // 图书借阅
+  lendBook: function(event){
+    // 获取图书表主键bid
+    let bid = event.currentTarget.dataset.bid
+    console.log("图书主键为:" + bid)
+    const app = getApp()
+    let user_id = app.globalData.userInfo.user_id
+    console.log("用户id为:" + user_id)
+    let param = {
+      bid: bid,
+      user_id: user_id
+    }
+    wx.request({
+      url: 'http://localhost:3000/books/lendBook',
+      method: 'POST',
+      data: param,
+      success: (res) => {
+        if(res.data.code ===200){
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'success'
+          })
+        }else{
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+      },
+      fail: (err) => {
+        console.log(err)
+      }
+    })
+  },
+
+  collectBook: function(event){
+    // 获取图书表主键bid
+    let bid = event.currentTarget.dataset.bid
+    console.log("图书主键为:" + bid)
+    const app = getApp()
+    let user_id = app.globalData.userInfo.user_id
+    console.log("用户id为:" + user_id)
+    let param = {
+      bid: bid,
+      user_id: user_id
+    }
+    wx.request({
+      url: 'http://localhost:3000/books/collectBook',
+      method: 'POST',
+      data: param,
+      success: (res) => {
+        if(res.data.code ===200){
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'success'
+          })
+        }else{
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+      },
+      fail: (err) => {
+        console.log(err)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

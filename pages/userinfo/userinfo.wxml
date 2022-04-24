@@ -5,9 +5,9 @@
 
 <van-cell-group title="基本信息">
   <van-cell title="昵称"  value="{{userInfo.user_name}}" is-link link-type="navigateTo" url="/pages/changename/changename"/>
-  <van-cell title="性别"  value="{{userInfo.sex}}" is-link />
-  <van-cell title="年龄"  value="{{userInfo.age}}" is-link />
-  <van-cell title="个性签名" value="{{userInfo.motto}}" is-link />
+  <van-cell title="性别"  value="{{userInfo.sex}}" is-link link-type="navigateTo" url="/pages/choosesex/choosesex"/>
+  <van-cell title="年龄"  value="{{userInfo.age}}" is-link link-type="navigateTo" url="/pages/chooseage/chooseage"/>
+  <van-cell title="个性签名" value="{{userInfo.motto}}" is-link link-type="navigateTo" url="/pages/setmotto/setmotto"/>
 </van-cell-group>
 <van-cell-group title="学校信息">
   <van-cell title="学校"  value="{{userInfo.school}}" />

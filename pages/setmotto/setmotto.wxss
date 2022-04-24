@@ -1,0 +1,7 @@
+/* pages/setmotto/setmotto.wxss */
+text {
+   color: rgba(161, 157, 157, 0.9);
+   font-size: small; 
+   letter-spacing: 1.4px;
+   margin-left: 10px;
+}

@@ -92,6 +92,27 @@
                "name": "",
                "pathName": "pages/login/login",
                "query": "",
+               "launchMode": "default",
+               "scene": null
+            },
+            {
+               "name": "",
+               "pathName": "pages/setmotto/setmotto",
+               "query": "",
+               "launchMode": "default",
+               "scene": null
+            },
+            {
+               "name": "",
+               "pathName": "pages/choosesex/choosesex",
+               "query": "",
+               "launchMode": "default",
+               "scene": null
+            },
+            {
+               "name": "",
+               "pathName": "pages/chooseage/chooseage",
+               "query": "",
                "scene": null,
                "launchMode": "default"
             }
