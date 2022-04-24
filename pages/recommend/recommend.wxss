@@ -5,12 +5,14 @@
 }
 
 .tags {
-   display: flex;
+   display: flex; 
    justify-content: space-evenly;
+   float: left;
    width: 100%;
    flex-wrap: wrap;
    margin-top: 10px;
 }
+
 
 .blank { 
    height: 2vh;

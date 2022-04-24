@@ -1,10 +1,9 @@
 <view class="tags">
-   <van-tag  type="primary" size="large">计算机</van-tag>
-   <van-tag  type="primary" size="large">治愈</van-tag>
-   <van-tag  type="primary" size="large">技术</van-tag>
-   <van-tag  type="primary" size="large">科幻</van-tag>
-   <van-tag  type="primary" size="large">情感</van-tag>
+   <view wx:for="{{tags}}" wx:key="index" wx:for-item="item" >
+      <van-tag  type="primary" size="large" class="tag">{{tags[index]}}</van-tag>
+   </view>
 </view>
+
 
 <view class="blank"></view>
    
@@ -18,8 +17,8 @@
          <text>{{item.author}}</text>
          <text>{{item.tag}}</text>
          <view>
-            <van-button type="info">借阅</van-button>
-            <van-button type="info" class="button_two">收藏</van-button>
+            <van-button type="info" bindtap="lendBook" data-bid="{{item.bid}}">借阅</van-button>
+            <van-button type="info" bindtap="collectBook" data-bid="{{item.bid}}" class="button_two">收藏</van-button>
          </view>
       </view>   
    </view>
