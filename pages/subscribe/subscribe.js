@@ -10,13 +10,8 @@ Page({
     // 标签名
     tabName: 'reading',
     imageURL: '/images/demo.jpg',
-    bookList:[
-      {
-        type: "精品小说",
-        bookName: "追风筝的人",
-        tag: "治愈系、孤独",
-      }
-    ],
+    lendBookList:[],
+    returnBookList:[],
   },
 
   /**
@@ -44,6 +39,111 @@ Page({
         })
       },
     })
+
+    // 获取借阅图书列表
+    that.getLendBooks()
+  },
+
+  // 获取借阅图书列表
+  getLendBooks: function(){
+    const app = getApp()
+    let user_id = app.globalData.userInfo.user_id
+    let param = {
+      user_id: user_id
+    }
+    wx.request({
+      url: 'http://localhost:3000/books/getLendBooks',
+      method: 'POST',
+      data: param,
+      success: (res) => {
+        if(res.data.code === 200){
+          console.log(res.data.data)
+          this.setData({
+            lendBookList: res.data.data
+          })
+        }else{
+          wx.showToast({
+            title: '出现问题啦',
+            icon: 'none'
+          })
+        }
+      },
+      fail: (err) => {
+        wx.showToast({
+          title: err,
+          icon: 'error'
+        })
+      }
+    })
+  },
+
+  // 图书归还
+  returnBook: function(event){
+    let bid = event.currentTarget.dataset.bid
+    console.log("图书主键为:" + bid)
+    const app = getApp()
+    let user_id = app.globalData.userInfo.user_id
+    let param = {
+      user_id: user_id,
+      bid: bid
+    }
+    wx.request({
+      url: 'http://localhost:3000/books/returnBook',
+      method: 'POST',
+      data: param,
+      success: (res) => {
+        if(res.data.code === 200){
+          wx.showToast({
+            title: '归还成功',
+          })
+          // 更新列表
+          this.getLendBooks()
+        }else{
+          wx.showToast({
+            title: '取消失败',
+            icon: 'error'
+          })
+        }
+      },
+      fail: (err) => {
+        wx.showToast({
+          title: err,
+        })
+      }
+    })
+  },
+
+  // 获取归还列表
+  getReturnBooks: function(){
+    const app = getApp()
+    let user_id = app.globalData.userInfo.user_id
+    let param = {
+      user_id: user_id
+    }
+    wx.request({
+      url: 'http://localhost:3000/books/getReturnBooks',
+      method: 'POST',
+      data: param,
+      success: (res) => {
+        if(res.data.code === 200){
+          console.log(res.data.data)
+          this.setData({
+            returnBookList: res.data.data
+          })
+        }else{
+          wx.showToast({
+            title: '出现问题啦',
+            icon: 'none'
+          })
+        }
+      },
+      fail: (err) => {
+        wx.showToast({
+          title: err,
+          icon: 'error'
+        })
+      }
+    })
   },
 
   // 标签状态 
@@ -52,6 +152,12 @@ Page({
     this.setData({
       tabName: event.detail.name
     })
+    // 根据标签调用不同的接口，返回不同的图书列表
+    if(this.tabName == 'reading'){
+      this.getLendBooks()
+    }else{
+      this.getReturnBooks()
+    }
   },
 
   /**

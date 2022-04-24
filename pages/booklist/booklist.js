@@ -110,6 +110,37 @@ Page({
   },
 
   // 取消订阅
+  unSubscribe: function(event){
+    let bid = event.currentTarget.dataset.bid
+    console.log("图书主键为:" + bid)
+    let param = {
+      bid: bid
+    }
+    wx.request({
+      url: 'http://localhost:3000/books/unSubscribe',
+      method: 'POST',
+      data: param,
+      success: (res) => {
+        if(res.data.code === 200){
+          wx.showToast({
+            title: res.data.msg,
+          })
+          // 更新列表
+          this.getCollectBooks()
+        }else{
+          wx.showToast({
+            title: '取消失败',
+            icon: 'error'
+          })
+        }
+      },
+      fail: (err) => {
+        wx.showToast({
+          title: err,
+        })
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

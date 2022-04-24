@@ -8,9 +8,24 @@ Page({
     // 滚动条高度
     clientHeight: '',
     // 书籍相关信息
-    bookName: '《小王子》',
-    author: '安托万·德·圣埃克苏佩里',
-    tag: '治愈系、孤独'
+    bookList:[
+      {
+      bookName: '《小王子》',
+      author: '安托万·德·圣埃克苏佩里',
+      tag: '治愈系、孤独'
+      },
+      {
+        bookName: '《小王子》',
+        author: '安托万·德·圣埃克苏佩里',
+        tag: '治愈系、孤独'
+      },
+      {
+        bookName: '《小王子》',
+        author: '安托万·德·圣埃克苏佩里',
+        tag: '治愈系、孤独'
+      }
+    ],
+    
   },
 
   /**
