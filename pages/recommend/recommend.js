@@ -8,25 +8,9 @@ Page({
     // 滚动条高度
     clientHeight: '',
     // 个性标签
-    tags: ['计算机','治愈','技术','科幻','情感'],
+    tags: [],
     // 书籍相关信息
-    bookList:[
-      {
-      bookName: '《小王子》',
-      author: '安托万·德·圣埃克苏佩里',
-      tag: '治愈系、孤独'
-      },
-      {
-        bookName: '《小王子》',
-        author: '安托万·德·圣埃克苏佩里',
-        tag: '治愈系、孤独'
-      },
-      {
-        bookName: '《小王子》',
-        author: '安托万·德·圣埃克苏佩里',
-        tag: '治愈系、孤独'
-      }
-    ],
+    bookList:[],
     
   },
 
@@ -57,18 +41,158 @@ Page({
         })
       },
     })
+
+    // 获取用户个性标签
+    that.getPersonalTags()
+
+    // 获取推荐列表  必须要确保先获取用户标签，然后才能调用这个函数(存在BUG 需要调整)
+    that.getRecommendBooks()
   },
 
   // 获取个性标签
+  getPersonalTags: function(){
+    const app = getApp()
+    let user_id = app.globalData.userInfo.user_id
+    let param = {
+      user_id: user_id
+    }
 
+    wx.request({
+      url: 'http://localhost:3000/books/getPersonalTags',
+      method: 'POST',
+      data: param,
+      success: (res) => {
+        if(res.data.code === 200){
+          console.log(res.data.data)
+          // 将个性标签存到全局
+          app.globalData.tags = res.data.data
+          this.setData({
+            tags: res.data.data
+          })
+          console.log(this.data.tags)
+        }else{
+          wx.showToast({
+            title: '出错啦。',
+            icon: 'error'
+          })
+        }
+      },
+      fail: (err) => {
+        wx.showToast({
+          title: err,
+          icon: 'error'
+        })
+      }
+    })
+  },
 
   // 获取推荐列表
-
+  getRecommendBooks: function(){
+    console.log(this)
+    const app = getApp()
+    let tags = app.globalData.tags
+    console.log(tags)
+    let param = {
+      tags: tags
+    }
+    
+    wx.request({
+      url: 'http://localhost:3000/books/getRecommendBooks',
+      method: 'POST',
+      data: param,
+      success: (res) => {
+        console.log(res)
+        if(res.data.code === 200){
+          console.log(res.data.data)
+          console.log(this)
+          this.setData({
+            bookList: res.data.data
+          })
+        }else{
+          wx.showToast({
+            title: '请求失败1',
+            icon: 'error'
+          })
+        }
+      },
+      fail: (err) => {
+        wx.showToast({
+          title: '请求失败2',
+          icon: 'error'
+        })
+      }
+    })
+  },
 
   // 借阅图书
-
+  lendBook: function(event){
+    // 获取图书表主键bid
+    let bid = event.currentTarget.dataset.bid
+    console.log("图书主键为:" + bid)
+    const app = getApp()
+    let user_id = app.globalData.userInfo.user_id
+    console.log("用户id为:" + user_id)
+    let param = {
+      bid: bid,
+      user_id: user_id
+    }
+    wx.request({
+      url: 'http://localhost:3000/books/lendBook',
+      method: 'POST',
+      data: param,
+      success: (res) => {
+        if(res.data.code ===200){
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'success'
+          })
+        }else{
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+      },
+      fail: (err) => {
+        console.log(err)
+      }
+    })
+  },
 
   // 收藏图书
+  collectBook: function(event){
+    // 获取图书表主键bid
+    let bid = event.currentTarget.dataset.bid
+    console.log("图书主键为:" + bid)
+    const app = getApp()
+    let user_id = app.globalData.userInfo.user_id
+    console.log("用户id为:" + user_id)
+    let param = {
+      bid: bid,
+      user_id: user_id
+    }
+    wx.request({
+      url: 'http://localhost:3000/books/collectBook',
+      method: 'POST',
+      data: param,
+      success: (res) => {
+        if(res.data.code ===200){
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'success'
+          })
+        }else{
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+      },
+      fail: (err) => {
+        console.log(err)
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

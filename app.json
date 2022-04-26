@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/login/login",
+    "pages/index/index",
     "pages/library/library",
     "pages/recommend/recommend",
     "pages/register/register",
@@ -12,7 +12,13 @@
     "pages/changename/changename",
     "pages/choosesex/choosesex",
     "pages/chooseage/chooseage",
-    "pages/setmotto/setmotto"
+    "pages/setmotto/setmotto",
+    "pages/computer/computer",
+    "pages/novel/novel",
+    "pages/finance/finance",
+    "pages/fiction/fiction",
+    "pages/literature/literature",
+    "pages/psychology/psychology"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -206,6 +206,7 @@ Page({
     })
   },
 
+  // 收藏图书
   collectBook: function(event){
     // 获取图书表主键bid
     let bid = event.currentTarget.dataset.bid
@@ -239,6 +240,58 @@ Page({
       }
     })
   },
+
+  // --------------------图书分类-----------------
+  
+  // 计算机
+  goToComputer: function(){
+    let type = '计算机'
+    wx.navigateTo({
+      url: '../computer/computer?type=' + type,
+      // url: '../computer/computer?type =' + type,   这种写法传递不了  type与=号之间不能有空格
+    })
+  },
+
+  // 精品小说
+  goToNovel: function(){
+    let type = '精品小说'
+    wx.navigateTo({
+      url: '../novel/novel?type=' + type,
+    })
+  },
+
+  // 经济理财
+  goToFinance: function(){
+    let type = '经济理财'
+    wx.navigateTo({
+      url: '../finance/finance?type=' + type,
+    })
+  },
+
+  // 科幻经典
+  goToFiction: function(){
+    let type = '科幻经典'
+    wx.navigateTo({
+      url: '../fiction/fiction?type=' + type,
+    })
+  },
+
+  // 文学
+  goToLiterature: function(){
+    let type = '文学'
+    wx.navigateTo({
+      url: '../literature/literature?type=' + type,
+    })
+  },
+
+  // 心理
+  goToPsychology: function(){
+    let type = '心理'
+    wx.navigateTo({
+      url: '../psychology/psychology?type=' + type,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

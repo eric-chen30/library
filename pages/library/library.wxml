@@ -24,12 +24,12 @@
 <view class="classify_container" wx:if="{{ tabName == 'classification'}}">
   <scroll-view class="scroll" scroll-y="true" style="height:{{clientHeight}}px">
     <van-grid column-num="3" gutter="{{10}}" square>
-      <van-grid-item icon="gem-o" text="计算机" />
-      <van-grid-item icon="service-o" text="精品小说" />
-      <van-grid-item icon="gift-o" text="经济理财" />
-      <van-grid-item icon="shop-o" text="科幻经典" />
-      <van-grid-item icon="medal-o" text="文学" />
-      <van-grid-item icon="notes-o" text="心理" />
+      <van-grid-item icon="gem-o" text="计算机" bindtap="goToComputer" />
+      <van-grid-item icon="service-o" text="精品小说" bindtap="goToNovel" />
+      <van-grid-item icon="gift-o" text="经济理财" bindtap="goToFinance" />
+      <van-grid-item icon="shop-o" text="科幻经典" bindtap="goToFiction" />
+      <van-grid-item icon="medal-o" text="文学" bindtap="goToLiterature" />
+      <van-grid-item icon="notes-o" text="心理" bindtap="goToPsychology" />
     </van-grid>
   </scroll-view>
 </view>

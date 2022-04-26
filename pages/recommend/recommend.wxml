@@ -13,7 +13,7 @@
          <image src="/images/demo.jpg" mode="aspectFill"></image>
       </view>
       <view class="right" >
-         <text>{{item.bookName}}</text>
+         <text>{{item.bname}}</text>
          <text>{{item.author}}</text>
          <text>{{item.tag}}</text>
          <view>
