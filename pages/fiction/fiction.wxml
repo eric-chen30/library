@@ -1,5 +1,5 @@
 <view wx:for="{{bookList}}" wx:key="index" wx:for-item="item">
-   <van-card  tag="{{item.type}}"  desc="{{item.tag}}" title="{{item.bname}}" thumb="{{imageURL}}">
+   <van-card  tag="{{item.type}}"  desc="{{item.tag}}" title="{{item.bname}}" thumb="{{item.imgurl}}">
       <view slot="footer">
          <van-button size="mini" bindtap="lendBook" data-bid="{{item.bid}}">借阅</van-button>
          <van-button size="mini" bindtap="collectBook" data-bid="{{item.bid}}">收藏</van-button>

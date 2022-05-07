@@ -122,7 +122,7 @@ Page({
   bookSearch: function(){
     // SyntaxError: Unexpected token 小 in JSON at position 1
     // 当使用POST进行传参时，需要穿的是json对象，单独传一个参数值，会有语法错误
-    // let searchValue = this.data.searchValue
+    let searchValue = this.data.searchValue
     let param = {
       searchValue: this.data.searchValue
     }

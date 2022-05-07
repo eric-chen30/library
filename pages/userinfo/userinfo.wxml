@@ -1,6 +1,6 @@
 <!--pages/userinfo/userinfo.wxml-->
 <view class="header">
-  <image src="../../images/demo.jpg"></image>
+  <image src="../../images/02.webp"></image>
 </view>
 
 <van-cell-group title="基本信息">

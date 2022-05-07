@@ -10,7 +10,7 @@
 <scroll-view class="scroll" scroll-y="true" style="height:{{clientHeight}}px">
    <view wx:for="{{bookList}}" wx:key="index" wx:for-item="item" class="recommand_card">
       <view class="left">
-         <image src="/images/demo.jpg" mode="aspectFill"></image>
+         <image src="{{item.imgurl}}" mode="aspectFill"></image>
       </view>
       <view class="right" >
          <text>{{item.bname}}</text>

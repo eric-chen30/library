@@ -64,8 +64,8 @@ Page({
       success: (res) => {
         if(res.data.code === 200){
           console.log(res.data.data)
-          // 将个性标签存到全局
-          app.globalData.tags = res.data.data
+          // 将个性标签存到全局  修改了后端逻辑接口   不需要传tags  而是传user_id
+          // app.globalData.tags = res.data.data
           this.setData({
             tags: res.data.data
           })
@@ -88,14 +88,11 @@ Page({
 
   // 获取推荐列表
   getRecommendBooks: function(){
-    console.log(this)
     const app = getApp()
-    let tags = app.globalData.tags
-    console.log(tags)
+    let user_id = app.globalData.userInfo.user_id
     let param = {
-      tags: tags
+      user_id: user_id
     }
-    
     wx.request({
       url: 'http://localhost:3000/books/getRecommendBooks',
       method: 'POST',

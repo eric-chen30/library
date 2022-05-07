@@ -46,12 +46,14 @@ Page({
           console.log(res)
           if(res.data.code === 200){
             wx.showToast({
-              title: res.data.msg,
+              title: '注册成功',
               icon: 'success'
             })
-            wx.redirectTo({
-              url: '../login/login',
-            })
+            setTimeout(function(){
+              wx.redirectTo({
+                url: '../login/login',
+              })
+            },1200) 
           }else{
             wx.showToast({
               title: res.data.msg,
@@ -82,7 +84,8 @@ Page({
       college: '',
       marjor: '',
       password: '',
-      confirm: ''
+      confirm: '',
+      stu_number: ''
     })
   },
 

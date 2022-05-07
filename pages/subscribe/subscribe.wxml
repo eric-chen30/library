@@ -7,7 +7,7 @@
 <view wx:if="{{ tabName == 'reading'}}">
   <scroll-view class="scroll" scroll-y="true" style="height:{{clientHeight}}px">
     <view wx:for="{{lendBookList}}" wx:key="index" wx:for-item="item">
-      <van-card  tag="{{item[0].type}}"  desc="{{item[0].tag}}" title="{{item[0].bname}}" thumb="{{imageURL}}">
+      <van-card  tag="{{item[0].type}}"  desc="{{item[0].tag}}" title="{{item[0].bname}}" thumb="{{item[0].imgurl}}">
         <view slot="footer">
           <van-button size="mini" bindtap="returnBook" data-bid="{{item[0].bid}}">归还</van-button>
         </view>
@@ -19,7 +19,7 @@
 <view wx:if="{{ tabName == 'readed'}}">
   <scroll-view class="scroll" scroll-y="true" style="height:{{clientHeight}}px">
     <view wx:for="{{returnBookList}}" wx:key="index" wx:for-item="item">
-      <van-card  tag="{{item[0].type}}"  desc="{{item[0].tag}}" title="{{item[0].bname}}" thumb="{{imageURL}}">
+      <van-card  tag="{{item[0].type}}"  desc="{{item[0].tag}}" title="{{item[0].bname}}" thumb="{{item[0].imgurl}}">
         <view slot="footer">
           <van-button size="mini" disabled>已归还</van-button>
         </view>

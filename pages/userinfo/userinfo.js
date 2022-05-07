@@ -1,6 +1,3 @@
-// Error: module 'utils/util.js' is not defined
-// var util = require('../../utils/util')
-// var util = require('../../../utils/util')
 Page({
 
   data: {
@@ -11,7 +8,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.getUserInfoById()
   },
 
   // 通过用户id获取用户信息
@@ -29,8 +26,11 @@ Page({
       success: (res) => {
         if(res.data.code === 200){
           // 更新全局用户信息
-          app.globalData.userInfo = res.data.data
-          console.log(app.globalData.userInfo)
+          app.globalData.userInfo = res.data.data[0]
+          this.setData({
+            userInfo: res.data.data[0]
+          })
+          console.log(this.data.userInfo)
         }else{
           wx.showToast({
             title: res.data.msg,
@@ -44,18 +44,6 @@ Page({
           icon: 'error'
         })
       }
-    })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    // 获取应用实例
-    const app = getApp()
-    // this.getUserInfoById()
-    this.setData({
-      userInfo: app.globalData.userInfo 
     })
   },
 

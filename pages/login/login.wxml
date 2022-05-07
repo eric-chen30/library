@@ -2,7 +2,7 @@
 <view>
   <!--项目Logo-->
   <view class="logo">
-    <image src="../../images/demo.jpg"></image>
+    <image src="../../images/17.webp"></image>
   </view>
   <!--登录主体-->
   <view class="main">

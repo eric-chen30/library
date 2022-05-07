@@ -14,8 +14,8 @@ page {
   margin-top: 60px;
 }
 .logo image {
-  width: 130px;
-  height: 130px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
 }
 
